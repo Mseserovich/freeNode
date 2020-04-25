@@ -1,0 +1,79 @@
+.flexbox-container {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: yellow;
+  border: 2px solid black;
+  justify-content: space-between;
+}
+
+.flexbox-item {
+  width: 100px;
+  margin: 10px;
+  border: 2px solid black;
+  background-color: turquoise;
+
+}
+
+.flexbox-item1 {
+  min-height: 100px;
+}
+
+.flexbox-item2 {
+  min-height: 100px;
+  flex-grow: 1;
+}
+
+.flexbox-item_b {
+  margin: 10px;
+  border: 2px solid black;
+  background-color: turquoise;
+
+}
+
+.flexbox-item_b1 {
+  min-height: 50px;
+  flex-grow: 1;
+  
+}
+
+.flexbox-item_b2 {
+  margin: 10px;
+  min-height: 50px;
+  width: 65%;
+  align-self: center;
+}
+
+.flexbox-container2 {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+.flexbox-item3 {
+  border: 2px solid black;
+  margin :10px;
+}
+
+.flexbox-container3 {
+  display: flex;
+}
+
+.expertise {
+  align-self: center;
+}
+
+.flex-cards {
+  display:flex;
+  height: 200px;
+  justify-content: center;
+}
+
+body {
+  background-color: khaki;
+}
+
+.question {
+  background-color: blue;
+}

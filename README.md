@@ -1,1 +1,2 @@
-# Backend Challenges boilerplate - package.json
+Chess Learning website
+
