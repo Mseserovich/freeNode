@@ -1,5 +1,5 @@
 
-
+//Make comments then push...
 function randomPieces(){
     let piecesObject = {king: "../static/images/king.jpg",
     queen: "../static/images/queen.jpg",
@@ -29,30 +29,36 @@ function randomPieces(){
     return {pieces: selectPiece, correctPiece: randPiece, piecesObject: piecesObject};
 };
 
-window.addEventListener('load', function(){
-    function showPieces(){
-        let display = document.querySelectorAll("#card1");
-        let setPieces = randomPieces();
-        console.log(setPieces);
-        for(let i = 0; i < display.length; i++){
-            display[i].setAttribute("src", setPieces.pieces[i]);
-            display[i].addEventListener("click", function(){
-                //alert("clicked");
-                let pickedCard = setPieces.pieces[setPieces.correctPiece];
-                console.log(pickedCard);
-                if (pickedCard === display[i].getAttribute("src")){
-                    alert("true");
-                }
-                
-            });
-        }
+function progressBar(progress){
+    //update = progress.getAttribute("style");
+    update = parseInt(progress.style.width);
+    update += 2;
+    progress.style.width = JSON.stringify(update)+'%';
+}
+
+
+function showPieces(){
+    let display = document.querySelectorAll(".card1 img");
+    let setPieces = randomPieces();
+    let progress = document.querySelector(".progress-bar");
+    let question = document.querySelector("#question");
+    let update = 0;
+    console.log(setPieces);
+    let pickedCard = setPieces.pieces[setPieces.correctPiece];
+    question.textContent = (pickedCard.split('/'))[3].split('.')[0];
+    for(let i = 0; i < display.length; i++){
         
-        return {display: display, randPiece: setPieces.correctPiece, pieces: setPieces.pieces}
-    };
-    let cardClick = showPieces();
+        display[i].setAttribute("src", setPieces.pieces[i]);
+        display[i].addEventListener("click", function(){
+
+            if (pickedCard === display[i].getAttribute("src")){
+                
+                progressBar(progress);
+            }
+            
+        });
+    }
     
-    
-
-});
-
-
+    return {display: display, randPiece: setPieces.correctPiece, pieces: setPieces.pieces}
+};
+showPieces();
