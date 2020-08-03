@@ -1,12 +1,12 @@
 
 //Make comments then push...
 function randomPieces(){
-    let piecesObject = {king: "../static/images/king.jpg",
-    queen: "../static/images/queen.jpg",
-    rook: "../static/images/rook.jpg",
-    pawn: "../static/images/pawn.jpg",
-    bishop: "../static/images/bishop.jpg",
-    knight: "../static/images/knight.jpg"};
+    let piecesObject = {king: "../public/assets/images/king.jpg",
+    queen: "../public/assets/images/queen.jpg",
+    rook: "../public/assets/images/rook.jpg",
+    pawn: "../public/assets/images/pawn.jpg",
+    bishop: "../public/assets/images/bishop.jpg",
+    knight: "../public/assets/images/knight.jpg"};
     let val = [];
     val.push(...Object.values(piecesObject));
     //console.log(val);
@@ -45,7 +45,7 @@ function showPieces(){
     let update = 0;
     console.log(setPieces);
     let pickedCard = setPieces.pieces[setPieces.correctPiece];
-    question.textContent = (pickedCard.split('/'))[3].split('.')[0];
+    question.textContent = (pickedCard.split('/'))[4].split('.')[0];
     for(let i = 0; i < display.length; i++){
         
         display[i].setAttribute("src", setPieces.pieces[i]);

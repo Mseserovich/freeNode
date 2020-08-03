@@ -1,10 +1,21 @@
 let express = require('express');
-let socket = require('socket.io');
 let app = express();
+
+app.set('view engine', 'ejs');
+app.use('/public', express.static('public'))
+
 app.get('/Home', function(req, res){
-    res.render('home.ejs');
+    res.render('Home.ejs');
 });
 
-app.listen(5000, function(){
+app.get('/Game', (req, res)=>{
+    res.render('GamePage')
+})
+
+app.get('/Profile', (req, res)=>{
+    res.render('Profile')
+})
+
+app.listen('5000', function(){
     console.log('Server has started');
 });
